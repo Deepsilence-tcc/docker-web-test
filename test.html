@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>滚动条</title>
+  <style>
+    .back {
+      height: 500px;
+      width: 500px;
+      background: #000;
+    }
+
+    .scroll {
+      height: 100px;
+      width: 30px;
+      background: yellow;
+      float: right;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="back">
+    <div class="scroll" onmousedown="down(event)" onmousemove="move(event)" onmouseout="out(event)" onmouseover="over(event)"></div>
+  </div>
+  <script>
+    var x;
+    var y;
+    var status = 0;
+    function down(params) {
+      console.log('down', params);
+      x = params.clientX;
+      y = params.clientY;
+      status = 1;
+    }
+    function move(params) {
+      if (status) {
+        console.log('move', params);
+
+      }
+    }
+    function out(params) {
+      status = 0;
+      console.log('out', params);
+    }
+    function over(params) {
+      console.log('over', params);
+    }
+  </script>
+</body>
+
+</html>
